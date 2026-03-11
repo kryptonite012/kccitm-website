@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KCC Institute of Technology & Management – Greater Noida</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #8B1A1A;
+    --crimson-dark: #6B1010;
+    --crimson-light: #B22222;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --cream: #FAF7F2;
+    --charcoal: #1C1C1E;
+    --gray: #6B6B6B;
+    --light-gray: #F4F4F4;
+    --white: #FFFFFF;
+    --border: rgba(139,26,26,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--crimson-dark);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.75rem;
+    padding: 6px 0;
+    letter-spacing: 0.03em;
+  }
+  .topbar-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; margin-left: 14px; }
+  .topbar a:hover { color: #fff; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 16px; }
+  .logo-badge {
+    width: 64px; height: 64px;
+    background: var(--crimson);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border-radius: 4px;
+  }
+  .logo-badge span:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+  .logo-badge span:last-child {
+    font-size: 0.48rem;
+    color: var(--gold-light);
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--crimson);
+    line-height: 1.2;
+  }
+  .logo-text p {
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; align-items: center; gap: 2px; }
+  nav a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  nav a:hover { color: var(--crimson); background: rgba(139,26,26,0.06); }
+  nav a.active { color: var(--crimson); }
+  .nav-btn {
+    background: var(--crimson);
+    color: #fff !important;
+    border-radius: 6px;
+    padding: 9px 20px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
+    transition: background 0.2s !important;
+  }
+  .nav-btn:hover { background: var(--crimson-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 580px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0d0505 0%, #3a0a0a 40%, #8B1A1A 100%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+  .hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    right: -100px; top: -100px;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-left { animation: fadeUp 0.8s ease both; }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero-tag::before { content: '★'; }
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: #fff;
+    line-height: 1.15;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .hero h2 em {
+    color: var(--gold-light);
+    font-style: normal;
+    display: block;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--charcoal);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+  }
+  .stat-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+  .stat-card .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  /* ── NOTICE BAR ── */
+  .notice-bar {
+    background: var(--crimson);
+    color: #fff;
+    padding: 12px 0;
+    overflow: hidden;
+  }
+  .notice-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .notice-label {
+    background: var(--gold);
+    color: var(--charcoal);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .notice-scroll { overflow: hidden; flex: 1; }
+  .notice-track {
+    display: flex;
+    gap: 60px;
+    animation: scroll-left 28s linear infinite;
+    white-space: nowrap;
+    font-size: 0.84rem;
+    opacity: 0.92;
+  }
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .notice-track span::before { content: '▶ '; opacity: 0.6; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 80px 0; }
+  .section-inner { max-width: 1200px; margin: auto; padding: 0 24px; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    background: rgba(139,26,26,0.08);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--gray);
+    max-width: 560px;
+    margin: auto;
+    line-height: 1.7;
+  }
+  .divider {
+    width: 56px; height: 3px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── QUICK LINKS ── */
+  .quick-links { background: var(--white); padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .quick-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--charcoal);
+    transition: all 0.25s;
+    cursor: pointer;
+    background: var(--white);
+  }
+  .quick-card:hover {
+    border-color: var(--crimson);
+    background: rgba(139,26,26,0.03);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(139,26,26,0.1);
+  }
+  .quick-icon {
+    width: 48px; height: 48px;
+    background: rgba(139,26,26,0.08);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    transition: background 0.25s;
+  }
+  .quick-card:hover .quick-icon { background: var(--crimson); }
+  .quick-card:hover .quick-icon span { filter: brightness(0) invert(1); }
+  .quick-card p { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
+
+  /* ── PROGRAMS ── */
+  .programs { background: var(--light-gray); }
+  .prog-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .prog-tab {
+    padding: 9px 22px;
+    border-radius: 30px;
+    border: 1.5px solid var(--border);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--white);
+    color: var(--gray);
+  }
+  .prog-tab.active, .prog-tab:hover {
+    background: var(--crimson);
+    color: #fff;
+    border-color: var(--crimson);
+  }
+  .prog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .prog-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .prog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+  .prog-top {
+    background: linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .prog-icon-wrap {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .prog-title { color: #fff; font-weight: 700; font-size: 0.92rem; line-height: 1.3; }
+  .prog-sub-title { color: rgba(255,255,255,0.7); font-size: 0.72rem; margin-top: 2px; }
+  .prog-body { padding: 20px; }
+  .prog-meta { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .prog-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(139,26,26,0.08);
+    color: var(--crimson);
+  }
+  .prog-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+  .prog-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--crimson);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .prog-link:hover { gap: 10px; }
+
+  /* ── FACILITIES ── */
+  .facilities { background: var(--white); }
+  .fac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .fac-card {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    transition: all 0.3s;
+    background: var(--white);
+  }
+  .fac-card:hover {
+    border-color: var(--crimson);
+    box-shadow: 0 8px 30px rgba(139,26,26,0.1);
+    transform: translateY(-4px);
+  }
+  .fac-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+  .fac-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
+  .fac-desc { font-size: 0.78rem; color: var(--gray); line-height: 1.5; }
+
+  /* ── NEWS & EVENTS ── */
+  .news { background: var(--light-gray); }
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+  }
+  .news-list { display: flex; flex-direction: column; gap: 16px; }
+  .news-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .news-item:hover { border-color: var(--crimson); box-shadow: 0 4px 16px rgba(139,26,26,0.08); }
+  .news-date {
+    min-width: 50px;
+    text-align: center;
+    background: var(--crimson);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 6px;
+    font-weight: 700;
+    line-height: 1.2;
+    align-self: flex-start;
+  }
+  .news-date .day { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; line-height: 1; }
+  .news-date .mon { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+  .news-content h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+  .news-content p { font-size: 0.78rem; color: var(--gray); line-height: 1.5; }
+  .events-col { display: flex; flex-direction: column; gap: 16px; }
+  .event-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid var(--crimson);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .event-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .event-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    margin-bottom: 8px;
+  }
+  .event-title { font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; line-height: 1.4; }
+  .event-info { font-size: 0.75rem; color: var(--gray); display: flex; flex-direction: column; gap: 3px; }
+  .event-info span { display: flex; align-items: center; gap: 6px; }
+
+  /* ── PAY FEES ── */
+  .pay-fees { background: var(--white); }
+  .fees-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .fees-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .fees-info p {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .fees-features { display: flex; flex-direction: column; gap: 14px; }
+  .fees-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    background: var(--light-gray);
+    border-radius: 10px;
+  }
+  .fees-feature .fi-icon {
+    width: 36px; height: 36px;
+    background: var(--crimson);
+    color: #fff;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .fees-feature h5 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+  .fees-feature p { font-size: 0.75rem; color: var(--gray); line-height: 1.5; margin: 0; }
+
+  .fees-form-wrap {
+    background: var(--charcoal);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fees-form-wrap::before {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+    top: -60px; right: -60px;
+  }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .form-subtitle { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+  .form-step {
+    display: none;
+  }
+  .form-step.active { display: block; }
+
+  .step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.3s;
+  }
+  .step-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+  .step-dot.done { background: rgba(201,168,76,0.5); }
+
+  .form-group { margin-bottom: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 0.88rem;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--charcoal); color: #fff; }
+
+  .fee-summary {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .fee-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+    padding: 5px 0;
+  }
+  .fee-summary-row.total {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-top: 8px;
+    padding-top: 12px;
+    font-weight: 700;
+    color: var(--gold-light);
+    font-size: 1rem;
+  }
+
+  .btn-pay {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #E8A020);
+    color: var(--charcoal);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn-pay:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+
+  .btn-next, .btn-prev {
+    background: var(--crimson);
+    color: #fff;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .btn-prev { background: rgba(255,255,255,0.1); }
+  .btn-next:hover { background: var(--crimson-light); }
+  .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+  .btn-pair { display: flex; gap: 10px; }
+
+  .success-box {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .success-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+  }
+  .success-box h3 { color: #fff; font-size: 1.3rem; margin-bottom: 8px; }
+  .success-box p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 20px; }
+  .txn-id {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    font-family: monospace;
+    margin-bottom: 20px;
+  }
+
+  /* ── GALLERY ── */
+  .gallery { background: var(--charcoal); }
+  .gallery .section-title { color: #fff; }
+  .gallery .section-sub { color: rgba(255,255,255,0.5); }
+  .gallery .section-tag { background: rgba(201,168,76,0.15); color: var(--gold-light); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 12px;
+  }
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item:first-child { grid-column: span 2; }
+  .gallery-item .g-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .gallery-item:hover .g-img { transform: scale(1.05); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 16px;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay span { color: #fff; font-size: 0.82rem; font-weight: 600; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--light-gray); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+  .contact-block {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .contact-block h4 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    margin-bottom: 10px;
+  }
+  .contact-block p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+  .contact-block a { color: var(--crimson); text-decoration: none; font-weight: 600; }
+
+  .contact-form-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px;
+    border: 1px solid var(--border);
+  }
+  .contact-form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .contact-form-card > p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+  .cf-group { margin-bottom: 16px; }
+  .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cf-group label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 7px;
+  }
+  .cf-group input,
+  .cf-group select,
+  .cf-group textarea {
+    width: 100%;
+    border: 1.5px solid #E5E5E5;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    outline: none;
+    background: var(--white);
+  }
+  .cf-group textarea { resize: vertical; min-height: 100px; }
+  .cf-group input:focus,
+  .cf-group select:focus,
+  .cf-group textarea:focus { border-color: var(--crimson); }
+  .btn-submit {
+    background: var(--crimson);
+    color: #fff;
+    border: none;
+    padding: 13px 32px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .btn-submit:hover { background: var(--crimson-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0E0606;
+    color: rgba(255,255,255,0.6);
+    padding: 60px 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .footer-brand .logo-badge { margin-bottom: 16px; }
+  .footer-brand p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 260px;
+  }
+  .social-links { display: flex; gap: 10px; }
+  .social-link {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .social-link:hover { background: var(--crimson); }
+  footer h5 {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer ul li a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  footer ul li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-bottom a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── ACCREDITATION STRIP ── */
+  .accreditation {
+    background: var(--white);
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .accred-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .accred-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray);
+  }
+  .accred-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    transition: all 0.2s;
+  }
+  .accred-item:hover { border-color: var(--crimson); color: var(--crimson); }
+
+  /* ── MARQUEE ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    animation: fadeUp 0.3s ease;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none; border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--gray);
+    line-height: 1;
+  }
+  .modal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+  .modal > p { color: var(--gray); font-size: 0.85rem; margin-bottom: 24px; }
+
+  /* RESPONSIVE */
+  @media(max-width: 900px) {
+    .hero { height: auto; padding: 60px 0; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; }
+    .hero h2 { font-size: 2.4rem; }
+    .fees-container { grid-template-columns: 1fr; }
+    .news-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:first-child { grid-column: span 2; }
+  }
+  @media(max-width: 600px) {
+    nav { display: none; }
+    .form-row, .cf-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:first-child { grid-column: span 1; }
+    .section-title { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>📍 Knowledge Park III, Greater Noida – 201308, U.P.</span>
+    <div>
+      <span>Admission Helpline:</span>
+      <a href="tel:01202320640">0120-2320640</a>
+      <a href="mailto:info@kccitm.ac.in">info@kccitm.ac.in</a>
+      <a href="#pay-fees">Pay Fees Online</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-badge">
+        <span>KCC</span>
+        <span>INSTITUTES</span>
+      </div>
+      <div class="logo-text">
+        <h1>KCC Institute of Technology & Management</h1>
+        <p>Affiliated to Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#programs">Programs</a>
+      <a href="#facilities">Campus</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#pay-fees" class="nav-btn">💳 Pay Fees</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag">Admissions Open 2025–26</div>
+      <h2>Shape Your Future<em>at KCC ITM</em></h2>
+      <p>A premier technical institution in Greater Noida offering world-class engineering, management & polytechnic programmes with state-of-the-art infrastructure and industry-ready curriculum.</p>
+      <div class="hero-actions">
+        <a href="#programs" class="btn-primary">🎓 Explore Programs →</a>
+        <a href="#pay-fees" class="btn-outline">💳 Pay Fees Online</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">25+</div>
+        <div class="label">Years of Excellence</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">10K+</div>
+        <div class="label">Alumni Network</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">200+</div>
+        <div class="label">Faculty Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">95%</div>
+        <div class="label">Placement Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE BAR -->
+<div class="notice-bar">
+  <div class="notice-inner">
+    <div class="notice-label">📢 Latest</div>
+    <div class="notice-scroll">
+      <div class="notice-track" id="noticeTrack">
+        <span>Admissions Open for B.Tech 2025–26 – Apply Now</span>
+        <span>MBA Lateral Entry Admissions Open</span>
+        <span>Campus Recruitment Drive – TCS, Infosys, Wipro – March 2025</span>
+        <span>AKTU Even Semester Examinations Schedule Released</span>
+        <span>Annual Tech Fest "IGNITE 2025" – Register Before 31 March</span>
+        <span>Scholarship Available for Merit Students – Contact Admission Cell</span>
+        <span>Admissions Open for B.Tech 2025–26 – Apply Now</span>
+        <span>MBA Lateral Entry Admissions Open</span>
+        <span>Campus Recruitment Drive – TCS, Infosys, Wipro – March 2025</span>
+        <span>AKTU Even Semester Examinations Schedule Released</span>
+        <span>Annual Tech Fest "IGNITE 2025" – Register Before 31 March</span>
+        <span>Scholarship Available for Merit Students – Contact Admission Cell</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACCREDITATION -->
+<div class="accreditation">
+  <div class="accred-inner">
+    <span class="accred-label">Recognised By:</span>
+    <div class="accred-item">🏛️ AICTE Approved</div>
+    <div class="accred-item">🎓 Affiliated to AKTU</div>
+    <div class="accred-item">🏅 NBA Accredited</div>
+    <div class="accred-item">📋 ISO 9001:2015</div>
+    <div class="accred-item">🌐 UGC Recognised</div>
+  </div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="quick-links">
+  <div class="section-inner">
+    <div class="quick-grid">
+      <div class="quick-card" onclick="document.getElementById('pay-fees').scrollIntoView({behavior:'smooth'})">
+        <div class="quick-icon"><span>💳</span></div>
+        <p>Pay Fees</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>📄</span></div>
+        <p>Admit Card</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>📊</span></div>
+        <p>Result</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>📚</span></div>
+        <p>E-Library</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>🗓️</span></div>
+        <p>Academic Calendar</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>🎓</span></div>
+        <p>Apply Now</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>🏢</span></div>
+        <p>Placements</p>
+      </div>
+      <div class="quick-card">
+        <div class="quick-icon"><span>📞</span></div>
+        <p>Contact Us</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Academic Programmes</div>
+      <h2 class="section-title">Choose Your Path to Success</h2>
+      <p class="section-sub">Industry-aligned programs designed to shape tomorrow's leaders and innovators.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="prog-tabs">
+      <button class="prog-tab active">All Programmes</button>
+      <button class="prog-tab">B.Tech / B.E.</button>
+      <button class="prog-tab">MBA / MCA</button>
+      <button class="prog-tab">Polytechnic</button>
+      <button class="prog-tab">Ph.D.</button>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">💻</div>
+          <div>
+            <div class="prog-title">Computer Science & Engineering</div>
+            <div class="prog-sub-title">B.Tech • 4 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">120 Seats</span>
+            <span class="prog-badge">AICTE Approved</span>
+          </div>
+          <p class="prog-desc">Specializations in AI/ML, Cloud Computing, Cyber Security & Data Science with industry partnerships.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">⚙️</div>
+          <div>
+            <div class="prog-title">Mechanical Engineering</div>
+            <div class="prog-sub-title">B.Tech • 4 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">60 Seats</span>
+            <span class="prog-badge">NBA Accredited</span>
+          </div>
+          <p class="prog-desc">Comprehensive curriculum covering design, manufacturing, thermodynamics with state-of-the-art labs.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">⚡</div>
+          <div>
+            <div class="prog-title">Electrical Engineering</div>
+            <div class="prog-sub-title">B.Tech • 4 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">60 Seats</span>
+            <span class="prog-badge">AICTE Approved</span>
+          </div>
+          <p class="prog-desc">Power systems, control engineering and renewable energy focus with hands-on industrial training.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">📡</div>
+          <div>
+            <div class="prog-title">Electronics & Communication</div>
+            <div class="prog-sub-title">B.Tech • 4 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">60 Seats</span>
+            <span class="prog-badge">NBA Accredited</span>
+          </div>
+          <p class="prog-desc">VLSI, embedded systems, IoT and telecommunications with cutting-edge laboratory facilities.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">📈</div>
+          <div>
+            <div class="prog-title">Master of Business Administration</div>
+            <div class="prog-sub-title">MBA • 2 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">60 Seats</span>
+            <span class="prog-badge">AICTE Approved</span>
+          </div>
+          <p class="prog-desc">Specializations in Finance, Marketing, HR and Operations with live projects and industry exposure.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon-wrap">🖥️</div>
+          <div>
+            <div class="prog-title">Master of Computer Applications</div>
+            <div class="prog-sub-title">MCA • 2 Years</div>
+          </div>
+        </div>
+        <div class="prog-body">
+          <div class="prog-meta">
+            <span class="prog-badge">60 Seats</span>
+            <span class="prog-badge">AKTU Affiliated</span>
+          </div>
+          <p class="prog-desc">Advanced software development, AI, data analytics and cloud technologies for tech professionals.</p>
+          <a class="prog-link" href="#">Know More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities" id="facilities">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Campus Life</div>
+      <h2 class="section-title">World-Class Infrastructure</h2>
+      <p class="section-sub">A vibrant campus equipped with every resource to fuel your academic and personal growth.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card">
+        <span class="fac-icon">🏫</span>
+        <div class="fac-name">Smart Classrooms</div>
+        <p class="fac-desc">100+ smart classrooms with interactive panels and high-speed internet</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🔬</span>
+        <div class="fac-name">Research Labs</div>
+        <p class="fac-desc">Advanced research labs with modern equipment for hands-on learning</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">📚</span>
+        <div class="fac-name">Central Library</div>
+        <p class="fac-desc">50,000+ books, journals, and digital resources with 24/7 access</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🏟️</span>
+        <div class="fac-name">Sports Complex</div>
+        <p class="fac-desc">Cricket ground, basketball & badminton courts, gym and indoor games</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🏠</span>
+        <div class="fac-name">Hostels</div>
+        <p class="fac-desc">Separate boys & girls hostels with mess, Wi-Fi and 24/7 security</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🍽️</span>
+        <div class="fac-name">Cafeteria</div>
+        <p class="fac-desc">Hygienic food court serving healthy meals and snacks daily</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🏥</span>
+        <div class="fac-name">Medical Centre</div>
+        <p class="fac-desc">On-campus health centre with qualified medical staff available</p>
+      </div>
+      <div class="fac-card">
+        <span class="fac-icon">🚌</span>
+        <div class="fac-name">Transport</div>
+        <p class="fac-desc">Fleet of buses covering Greater Noida, Noida and Delhi NCR routes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS & EVENTS -->
+<section class="news" id="news">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Campus Happenings</div>
+      <h2 class="section-title">News & Events</h2>
+      <p class="section-sub">Stay updated with the latest from KCC ITM.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-date"><div class="day">15</div><div class="mon">Mar</div></div>
+          <div class="news-content">
+            <h4>KCC ITM Signs MoU with Infosys for Industry-Academia Collaboration</h4>
+            <p>A landmark partnership to provide internships, live projects and placement opportunities for students.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-date"><div class="day">10</div><div class="mon">Mar</div></div>
+          <div class="news-content">
+            <h4>B.Tech Students Win National Robotics Championship 2025</h4>
+            <p>Team KCC represented Greater Noida at the national finals in Pune, securing first position in autonomous robotics.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-date"><div class="day">05</div><div class="mon">Mar</div></div>
+          <div class="news-content">
+            <h4>Annual Convocation Ceremony – 1,200 Degrees Awarded</h4>
+            <p>The 2024 batch celebrated their graduation at the annual convocation graced by the Honourable Governor of UP.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-date"><div class="day">28</div><div class="mon">Feb</div></div>
+          <div class="news-content">
+            <h4>National Science Day – Workshop on AI & Future Technologies</h4>
+            <p>Industry experts from Google, Microsoft and DRDO conducted sessions on cutting-edge technologies.</p>
+          </div>
+        </div>
+      </div>
+      <div class="events-col">
+        <div class="event-card">
+          <div class="event-tag">🎯 Upcoming Event</div>
+          <div class="event-title">IGNITE 2025 – Annual Tech & Cultural Fest</div>
+          <div class="event-info">
+            <span>📅 28–30 March 2025</span>
+            <span>📍 KCC ITM Main Campus</span>
+            <span>🎟️ Registration Open for All</span>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-tag">💼 Placement Drive</div>
+          <div class="event-title">Campus Recruitment – TCS, Wipro, Infosys & HCL</div>
+          <div class="event-info">
+            <span>📅 5 April 2025</span>
+            <span>📍 Placement Cell, KCC ITM</span>
+            <span>👥 Final Year Students (All Branches)</span>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-tag">📝 Exam Alert</div>
+          <div class="event-title">AKTU Even Semester End Term Examinations 2025</div>
+          <div class="event-info">
+            <span>📅 15 April – 5 May 2025</span>
+            <span>📍 Examination Centres as per AKTU</span>
+            <span>⚠️ Download Admit Card from Student Portal</span>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-tag">🎓 Workshop</div>
+          <div class="event-title">Entrepreneurship Development Programme – MSME</div>
+          <div class="event-info">
+            <span>📅 18–20 March 2025</span>
+            <span>📍 Seminar Hall, Block A</span>
+            <span>🆓 Free for KCC Students</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAY FEES -->
+<section class="pay-fees" id="pay-fees">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Student Portal</div>
+      <h2 class="section-title">Online Fee Payment</h2>
+      <p class="section-sub">Quick, secure and hassle-free fee payment with instant digital receipt.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="fees-container">
+      <div class="fees-info">
+        <h3>Pay Your Semester Fees Instantly</h3>
+        <p>Our secure online payment gateway accepts all major payment methods. Get your receipt instantly on your registered email and SMS.</p>
+        <div class="fees-features">
+          <div class="fees-feature">
+            <div class="fi-icon">🔒</div>
+            <div>
+              <h5>256-bit SSL Encryption</h5>
+              <p>Your payment data is protected with bank-grade security at every step.</p>
+            </div>
+          </div>
+          <div class="fees-feature">
+            <div class="fi-icon">📱</div>
+            <div>
+              <h5>Multiple Payment Modes</h5>
+              <p>UPI, Net Banking, Credit/Debit Card and NEFT/RTGS accepted.</p>
+            </div>
+          </div>
+          <div class="fees-feature">
+            <div class="fi-icon">🧾</div>
+            <div>
+              <h5>Instant Digital Receipt</h5>
+              <p>Official receipt sent to your email within seconds of successful payment.</p>
+            </div>
+          </div>
+          <div class="fees-feature">
+            <div class="fi-icon">📞</div>
+            <div>
+              <h5>24/7 Payment Support</h5>
+              <p>Dedicated helpline for payment issues: <strong>0120-2320640</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fees-form-wrap">
+        <div class="form-title">Pay Fees Securely</div>
+        <div class="form-subtitle">Enter your student details to proceed</div>
+
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+          <div class="step-dot active" id="dot1"></div>
+          <div class="step-dot" id="dot2"></div>
+          <div class="step-dot" id="dot3"></div>
+        </div>
+
+        <!-- STEP 1: Student Details -->
+        <div class="form-step active" id="step1">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Student Name *</label>
+              <input type="text" id="studentName" placeholder="Full Name as per ID">
+            </div>
+            <div class="form-group">
+              <label>Enrollment / Roll No. *</label>
+              <input type="text" id="enrollNo" placeholder="e.g. 2200123456789">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Programme *</label>
+              <select id="programme">
+                <option value="">Select Programme</option>
+                <option>B.Tech – CSE</option>
+                <option>B.Tech – ME</option>
+                <option>B.Tech – EE</option>
+                <option>B.Tech – ECE</option>
+                <option>B.Tech – Civil</option>
+                <option>MBA</option>
+                <option>MCA</option>
+                <option>Polytechnic</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Semester *</label>
+              <select id="semester">
+                <option value="">Select Semester</option>
+                <option>Semester 1</option>
+                <option>Semester 2</option>
+                <option>Semester 3</option>
+                <option>Semester 4</option>
+                <option>Semester 5</option>
+                <option>Semester 6</option>
+                <option>Semester 7</option>
+                <option>Semester 8</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" id="mobile" placeholder="10-digit mobile">
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="email" placeholder="student@email.com">
+            </div>
+          </div>
+          <div class="form-nav">
+            <div></div>
+            <button class="btn-next" onclick="goToStep(2)">Next: Fee Details →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Fee Category -->
+        <div class="form-step" id="step2">
+          <div class="form-group">
+            <label>Fee Category *</label>
+            <select id="feeCategory" onchange="updateFeeAmount()">
+              <option value="">Select Fee Type</option>
+              <option value="85000">Tuition Fee – ₹85,000</option>
+              <option value="12000">Exam Fee – ₹12,000</option>
+              <option value="8500">Hostel Fee – ₹8,500</option>
+              <option value="3500">Transport Fee – ₹3,500</option>
+              <option value="2000">Library Fee – ₹2,000</option>
+              <option value="5000">Development Fee – ₹5,000</option>
+              <option value="116000">Full Semester Package – ₹1,16,000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Academic Year *</label>
+            <select id="academicYear">
+              <option>2024–25</option>
+              <option>2025–26</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Payment Mode *</label>
+            <select id="payMode">
+              <option value="">Select Payment Mode</option>
+              <option>UPI (GPay / PhonePe / Paytm)</option>
+              <option>Net Banking</option>
+              <option>Credit Card</option>
+              <option>Debit Card</option>
+              <option>NEFT / RTGS</option>
+            </select>
+          </div>
+          <div class="fee-summary" id="feeSummary" style="display:none">
+            <div class="fee-summary-row"><span>Fee Category</span><span id="sumCategory">–</span></div>
+            <div class="fee-summary-row"><span>Student</span><span id="sumStudent">–</span></div>
+            <div class="fee-summary-row"><span>Semester</span><span id="sumSemester">–</span></div>
+            <div class="fee-summary-row"><span>Processing Charges</span><span>₹0 (NIL)</span></div>
+            <div class="fee-summary-row total"><span>Total Payable</span><span id="sumTotal">–</span></div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-prev" onclick="goToStep(1)">← Back</button>
+            <button class="btn-next" onclick="goToStep(3)">Review & Pay →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Confirm & Pay -->
+        <div class="form-step" id="step3">
+          <div class="fee-summary">
+            <div class="fee-summary-row"><span>Student Name</span><span id="conf-name">–</span></div>
+            <div class="fee-summary-row"><span>Enrollment No.</span><span id="conf-enroll">–</span></div>
+            <div class="fee-summary-row"><span>Programme / Semester</span><span id="conf-prog">–</span></div>
+            <div class="fee-summary-row"><span>Mobile</span><span id="conf-mobile">–</span></div>
+            <div class="fee-summary-row"><span>Email</span><span id="conf-email">–</span></div>
+            <div class="fee-summary-row"><span>Fee Type</span><span id="conf-fee">–</span></div>
+            <div class="fee-summary-row"><span>Payment Mode</span><span id="conf-mode">–</span></div>
+            <div class="fee-summary-row total"><span>Total Amount</span><span id="conf-total">–</span></div>
+          </div>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:16px;line-height:1.5;">
+            By clicking Pay Now, you agree to our terms. Your payment is secured by 256-bit SSL encryption. Receipt will be sent to your registered email and mobile.
+          </p>
+          <button class="btn-pay" onclick="processPayment()">
+            🔒 Pay Securely Now
+          </button>
+          <div class="form-nav" style="margin-top:12px;">
+            <button class="btn-prev" onclick="goToStep(2)">← Edit Details</button>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Success -->
+        <div class="form-step" id="step4">
+          <div class="success-box">
+            <div class="success-icon">✅</div>
+            <h3>Payment Successful!</h3>
+            <p>Your fee payment has been processed successfully. Official receipt has been sent to your email and mobile number.</p>
+            <div class="txn-id" id="txnDisplay">Transaction ID: KCCITM-2025-######</div>
+            <button class="btn-pay" onclick="resetForm()">🔄 Make Another Payment</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Campus Gallery</div>
+      <h2 class="section-title">Life at KCC ITM</h2>
+      <p class="section-sub">A glimpse into our vibrant campus, labs and events.</p>
+      <div class="divider" style="background: linear-gradient(90deg,var(--gold),var(--crimson));"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="grid-row:span 2; grid-column:span 2;">
+        <img class="g-img" src="/mnt/user-data/uploads/kcc2.jpeg" alt="KCC ITM Campus Building" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3a0a0a,#8B1A1A)'">
+        <div class="gallery-overlay"><span>📸 KCC ITM Campus – Greater Noida</span></div>
+      </div>
+      <div class="gallery-item">
+        <img class="g-img" src="/mnt/user-data/uploads/kcc3.jpeg" alt="KCC Campus Night" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+        <div class="gallery-overlay"><span>🌙 Campus at Night</span></div>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,var(--crimson-dark),#2a0808);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <span style="font-size:3rem;">🏆</span>
+        <span style="color:#fff;font-weight:700;font-size:0.9rem;">25+ Years of Excellence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-sub">We're here to help with admissions, fee queries and campus information.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>📍 Address</h4>
+          <p>KCC Institute of Technology & Management<br>Knowledge Park III, Greater Noida,<br>Uttar Pradesh – 201308</p>
+        </div>
+        <div class="contact-block">
+          <h4>📞 Phone</h4>
+          <p><a href="tel:01202320640">0120-2320640</a> (Admission Cell)<br><a href="tel:01202320641">0120-2320641</a> (General Enquiry)</p>
+        </div>
+        <div class="contact-block">
+          <h4>✉️ Email</h4>
+          <p><a href="mailto:admission@kccitm.ac.in">admission@kccitm.ac.in</a><br><a href="mailto:info@kccitm.ac.in">info@kccitm.ac.in</a></p>
+        </div>
+        <div class="contact-block">
+          <h4>🕐 Office Hours</h4>
+          <p>Monday – Saturday: 9:00 AM – 5:00 PM<br>Sunday: Closed (Emergency: available on phone)</p>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <h3>Send an Enquiry</h3>
+        <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name">
+          </div>
+          <div class="cf-group">
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="10-digit number">
+          </div>
+        </div>
+        <div class="cf-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="cf-group">
+          <label>Enquiry About</label>
+          <select>
+            <option>Admissions 2025–26</option>
+            <option>Fee Payment Issue</option>
+            <option>Hostel & Transport</option>
+            <option>Placement Cell</option>
+            <option>Academic Query</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label>Message</label>
+          <textarea placeholder="Describe your query in detail..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitEnquiry(this)">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-badge" style="margin-bottom:16px;width:56px;height:56px;">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fff;line-height:1;letter-spacing:2px;">KCC</span>
+          <span style="font-size:0.42rem;color:var(--gold-light);letter-spacing:1.5px;font-weight:600;text-transform:uppercase;">INSTITUTES</span>
+        </div>
+        <p>KCC Institute of Technology & Management, Greater Noida – a premier institution committed to academic excellence and holistic development since 1997.</p>
+        <div class="social-links">
+          <div class="social-link">📘</div>
+          <div class="social-link">🐦</div>
+          <div class="social-link">📷</div>
+          <div class="social-link">▶️</div>
+          <div class="social-link">💼</div>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#programs">Academic Programmes</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Research & Innovation</a></li>
+          <li><a href="#">NAAC / NBA</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Student Corner</h5>
+        <ul>
+          <li><a href="#pay-fees">Pay Fees Online</a></li>
+          <li><a href="#">Student Portal Login</a></li>
+          <li><a href="#">Examination Results</a></li>
+          <li><a href="#">Admit Card Download</a></li>
+          <li><a href="#">E-Library</a></li>
+          <li><a href="#">Academic Calendar</a></li>
+          <li><a href="#">Anti-Ragging Committee</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Policies</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Grievance Redressal</a></li>
+          <li><a href="#">RTI Information</a></li>
+          <li><a href="#">Mandatory Disclosure</a></li>
+          <li><a href="#">AICTE Approval</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KCC Institute of Technology & Management, Greater Noida. All rights reserved.</p>
+      <p>Affiliated to <a href="#">AKTU, Lucknow</a> | Approved by <a href="#">AICTE, New Delhi</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fee form logic
+  let currentStep = 1;
+
+  function goToStep(step) {
+    if (step === 2) {
+      const name = document.getElementById('studentName').value.trim();
+      const enroll = document.getElementById('enrollNo').value.trim();
+      const prog = document.getElementById('programme').value;
+      const sem = document.getElementById('semester').value;
+      if (!name || !enroll || !prog || !sem) {
+        alert('Please fill in all required student details.');
+        return;
+      }
+    }
+    if (step === 3) {
+      const cat = document.getElementById('feeCategory').value;
+      const mode = document.getElementById('payMode').value;
+      if (!cat || !mode) {
+        alert('Please select fee category and payment mode.');
+        return;
+      }
+      // Populate confirmation
+      const catEl = document.getElementById('feeCategory');
+      const catText = catEl.options[catEl.selectedIndex].text;
+      document.getElementById('conf-name').textContent = document.getElementById('studentName').value;
+      document.getElementById('conf-enroll').textContent = document.getElementById('enrollNo').value;
+      document.getElementById('conf-prog').textContent = document.getElementById('programme').value + ' / ' + document.getElementById('semester').value;
+      document.getElementById('conf-mobile').textContent = document.getElementById('mobile').value;
+      document.getElementById('conf-email').textContent = document.getElementById('email').value;
+      document.getElementById('conf-fee').textContent = catText;
+      document.getElementById('conf-mode').textContent = document.getElementById('payMode').value;
+      const amt = catEl.options[catEl.selectedIndex].value;
+      document.getElementById('conf-total').textContent = '₹' + parseInt(amt).toLocaleString('en-IN');
+    }
+    document.getElementById('step' + currentStep).classList.remove('active');
+    document.getElementById('step' + step).classList.add('active');
+    // Update dots
+    for (let i = 1; i <= 3; i++) {
+      const dot = document.getElementById('dot' + i);
+      dot.classList.remove('active', 'done');
+      if (i < step) dot.classList.add('done');
+      if (i === step) dot.classList.add('active');
+    }
+    currentStep = step;
+  }
+
+  function updateFeeAmount() {
+    const sel = document.getElementById('feeCategory');
+    const summary = document.getElementById('feeSummary');
+    if (!sel.value) { summary.style.display = 'none'; return; }
+    const amt = parseInt(sel.value);
+    const catText = sel.options[sel.selectedIndex].text;
+    document.getElementById('sumCategory').textContent = catText;
+    document.getElementById('sumStudent').textContent = document.getElementById('studentName').value || '–';
+    document.getElementById('sumSemester').textContent = document.getElementById('semester').value || '–';
+    document.getElementById('sumTotal').textContent = '₹' + amt.toLocaleString('en-IN');
+    summary.style.display = 'block';
+  }
+
+  function processPayment() {
+    const btn = document.querySelector('.btn-pay');
+    btn.textContent = '⏳ Processing…';
+    btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('step3').classList.remove('active');
+      document.getElementById('step4').classList.add('active');
+      currentStep = 4;
+      const txnId = 'KCCITM-2025-' + Math.floor(Math.random() * 900000 + 100000);
+      document.getElementById('txnDisplay').textContent = 'Transaction ID: ' + txnId;
+    }, 2200);
+  }
+
+  function resetForm() {
+    document.getElementById('step4').classList.remove('active');
+    // Reset all inputs
+    ['studentName','enrollNo','mobile','email'].forEach(id => document.getElementById(id).value = '');
+    ['programme','semester','feeCategory','payMode'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('feeSummary').style.display = 'none';
+    currentStep = 1;
+    document.getElementById('step1').classList.add('active');
+    for (let i = 1; i <= 3; i++) {
+      const dot = document.getElementById('dot' + i);
+      dot.classList.remove('active', 'done');
+      if (i === 1) dot.classList.add('active');
+    }
+    const btn = document.querySelector('.btn-pay');
+    btn.textContent = '🔒 Pay Securely Now';
+    btn.disabled = false;
+  }
+
+  function submitEnquiry(btn) {
+    btn.textContent = '✅ Sent Successfully!';
+    btn.style.background = '#22c55e';
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry →';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  // Prog tabs (visual only)
+  document.querySelectorAll('.prog-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
