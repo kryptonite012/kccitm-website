@@ -25,5 +25,3 @@ Grid-based image layout with hover effects
 📞 Contact Section
 Enquiry form with interactive feedback
 Address, phone, and email details
-📱 Responsive Design
-Works smoothly across all screen sizes
