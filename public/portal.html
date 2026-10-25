@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Portal – KCC Institute of Technology &amp; Management</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/portal.css">
+<script type="module" src="/js/portal.js"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="/">
+      <img src="/img/logo.svg" alt="" class="logo-mark">
+      <span><strong>KCCITM</strong><small>ERP Portal</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Portal navigation"></nav>
+    <div class="sidebar-foot"><a href="/" class="tiny">← Back to website</a></div>
+  </aside>
+  <div class="sidebar-overlay" id="overlay"></div>
+  <div class="main-col">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <h1 id="pageTitle">Loading…</h1>
+      <div class="user-chip">
+        <div class="avatar" id="avatar"></div>
+        <div class="user-meta"><strong id="userName"></strong><small id="userRole"></small></div>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </header>
+    <main class="content" id="view"><div class="spinner"></div></main>
+  </div>
+</div>
+</body>
+</html>

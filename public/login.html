@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login – KCCITM ERP Portal</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/login.css">
+<script type="module" src="/js/login.js"></script>
+</head>
+<body>
+<div class="login-wrap">
+  <section class="login-art">
+    <a href="/" class="login-brand"><img src="/img/logo.svg" alt="" class="logo-mark"><span>KCC Institute of Technology &amp; Management<small>Greater Noida · AKTU Affiliated</small></span></a>
+    <h1>One portal for your entire campus life.</h1>
+    <ul>
+      <li>✅ Live attendance &amp; shortage alerts</li>
+      <li>📊 Results, SGPA/CGPA &amp; printable marksheets</li>
+      <li>💳 Online fee payment with instant receipts</li>
+      <li>🪪 Admit cards, timetable &amp; assignments</li>
+      <li>💼 Placement drives, library &amp; helpdesk</li>
+    </ul>
+  </section>
+  <section class="login-panel">
+    <div class="login-card">
+      <h2>Sign in</h2>
+      <p class="muted small">Choose your role and use the credentials issued by the institute.</p>
+      <div class="role-tabs" role="tablist">
+        <button type="button" class="active" data-role="student">Student</button>
+        <button type="button" data-role="faculty">Faculty</button>
+        <button type="button" data-role="admin">Admin</button>
+      </div>
+      <form id="loginForm" autocomplete="on">
+        <label><span id="userLabel">Enrollment Number</span><input name="username" id="username" required autocomplete="username" placeholder="e.g. 24KCCCSE001"></label>
+        <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+      <p class="tiny muted mt">Forgot password? Contact the IT cell / your department office to reset it. Students can also pay fees without logging in using <a href="/#quick-pay">Quick Pay</a>.</p>
+      <div class="demo-box" id="demoBox">
+        <strong>Demo accounts</strong>
+        <button type="button" data-demo="student">Student · 24KCCCSE001 / Student@123</button>
+        <button type="button" data-demo="faculty">Faculty · KCCF001 / Faculty@123</button>
+        <button type="button" data-demo="admin">Admin · admin / Admin@123</button>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
