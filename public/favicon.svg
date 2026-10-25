@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KCCITM">
+  <path d="M32 2 58 10v20c0 16-11 27-26 32C17 57 6 46 6 30V10Z" fill="#8b1a1a"/>
+  <path d="M32 6 54 13v17c0 13.5-9.2 23-22 27.6C19.2 53 10 43.5 10 30V13Z" fill="none" stroke="#e8c97a" stroke-width="1.5"/>
+  <path d="M20 22h24l-12-6Z" fill="#e8c97a"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="15" fill="#fff" letter-spacing="1">KCC</text>
+  <text x="32" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5.5" fill="#e8c97a" letter-spacing="1.2">ITM</text>
+</svg>
