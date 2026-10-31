@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Student-built concept website for KCC Institute of Technology & Management, Greater Noida: programmes, campus, news, a demo fee-payment flow and enquiries.">
 <title>KCC Institute of Technology & Management – Greater-Noida</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1011,8 +1013,17 @@
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .gallery-item:first-child { grid-column: span 2; }
   }
+  .project-notice { background:#1f2937; color:#f9fafb; text-align:center; font-size:0.8rem; padding:8px 16px; }
+  .project-notice strong { color:#fbbf24; }
+  .demo-note { background:#fff7ed; border:1px solid #fdba74; color:#9a3412; border-radius:8px; padding:10px 14px; font-size:0.82rem; margin-bottom:16px; }
+  .field-error { border-color:#dc2626 !important; }
+  .menu-toggle { display:none; background:none; border:1px solid currentColor; border-radius:6px; font-size:1.3rem; padding:4px 10px; cursor:pointer; color:inherit; }
+  .prog-card.hidden { display:none; }
   @media(max-width: 600px) {
+    .menu-toggle { display:block; }
     nav { display: none; }
+    nav.open { display:flex; flex-direction:column; align-items:stretch; position:absolute; left:0; right:0; top:100%; background:#fff; box-shadow:0 8px 20px rgba(0,0,0,.15); padding:8px; z-index:50; }
+    .header-inner { position:relative; }
     .form-row, .cf-row { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr; }
@@ -1022,6 +1033,8 @@
 </style>
 </head>
 <body>
+
+<div class="project-notice" role="note"><strong>Student project:</strong> an unofficial concept website built for learning. It is not affiliated with KCC ITM, and the fee payment flow is a demo that charges nothing.</div>
 
 <!-- TOP BAR -->
 <div class="topbar">
@@ -1049,7 +1062,8 @@
         <p>Affiliated to Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
       </div>
     </div>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <nav id="mainNav">
       <a href="#" class="active">Home</a>
       <a href="#programs">Programs</a>
       <a href="#facilities">Campus</a>
@@ -1592,6 +1606,7 @@
 
         <!-- STEP 3: Confirm & Pay -->
         <div class="form-step" id="step3">
+          <div class="demo-note">Demo only: no payment is processed and no money is charged.</div>
           <div class="fee-summary">
             <div class="fee-summary-row"><span>Student Name</span><span id="conf-name">–</span></div>
             <div class="fee-summary-row"><span>Enrollment No.</span><span id="conf-enroll">–</span></div>
@@ -1641,11 +1656,11 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" style="grid-row:span 2; grid-column:span 2;">
-        <img class="g-img" src="/mnt/user-data/uploads/kcc2.jpeg" alt="KCC ITM Campus Building" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3a0a0a,#8B1A1A)'">
+        <img class="g-img" src="images/kcc2.jpeg" loading="lazy" alt="KCC ITM Campus Building" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3a0a0a,#8B1A1A)'">
         <div class="gallery-overlay"><span>📸 KCC ITM Campus – Greater Noida</span></div>
       </div>
       <div class="gallery-item">
-        <img class="g-img" src="/mnt/user-data/uploads/kcc3.jpeg" alt="KCC Campus Night" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+        <img class="g-img" src="images/kcc3.jpeg" loading="lazy" alt="KCC Campus Night" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
         <div class="gallery-overlay"><span>🌙 Campus at Night</span></div>
       </div>
       <div class="gallery-item" style="background:linear-gradient(135deg,var(--crimson-dark),#2a0808);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
@@ -1716,7 +1731,7 @@
           <label>Message</label>
           <textarea placeholder="Describe your query in detail..."></textarea>
         </div>
-        <button class="btn-submit" onclick="submitEnquiry(this)">Send Enquiry →</button>
+        <button class="btn-submit" type="button" onclick="submitEnquiry(this)">Send Enquiry →</button>
       </div>
     </div>
   </div>
@@ -1797,6 +1812,11 @@
         alert('Please fill in all required student details.');
         return;
       }
+      const mobile = document.getElementById('mobile').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!/^\d{6,15}$/.test(enroll)) { alert('Enrollment number should contain digits only.'); return; }
+      if (mobile && !/^[6-9]\d{9}$/.test(mobile)) { alert('Please enter a valid 10-digit mobile number.'); return; }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { alert('Please enter a valid email address.'); return; }
     }
     if (step === 3) {
       const cat = document.getElementById('feeCategory').value;
@@ -1851,7 +1871,7 @@
       document.getElementById('step3').classList.remove('active');
       document.getElementById('step4').classList.add('active');
       currentStep = 4;
-      const txnId = 'KCCITM-2025-' + Math.floor(Math.random() * 900000 + 100000);
+      const txnId = 'DEMO-KCCITM-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 900000 + 100000);
       document.getElementById('txnDisplay').textContent = 'Transaction ID: ' + txnId;
     }, 2200);
   }
@@ -1875,21 +1895,71 @@
   }
 
   function submitEnquiry(btn) {
+    const card = btn.closest('.contact-form-card');
+    const [name, mobile, email] = card.querySelectorAll('input');
+    const msg = card.querySelector('textarea');
+    const checks = [
+      [name, name.value.trim().length >= 2],
+      [mobile, /^[6-9]\d{9}$/.test(mobile.value.trim())],
+      [email, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())],
+      [msg, msg.value.trim().length >= 5]
+    ];
+    let ok = true;
+    checks.forEach(([el, valid]) => { el.classList.toggle('field-error', !valid); if (!valid) ok = false; });
+    if (!ok) {
+      btn.textContent = '⚠️ Please complete the highlighted fields';
+      setTimeout(() => { btn.textContent = 'Send Enquiry →'; }, 2500);
+      return;
+    }
     btn.textContent = '✅ Sent Successfully!';
     btn.style.background = '#22c55e';
+    card.querySelectorAll('input, textarea').forEach(el => el.value = '');
     setTimeout(() => {
       btn.textContent = 'Send Enquiry →';
       btn.style.background = '';
     }, 3000);
   }
 
-  // Prog tabs (visual only)
+  // Programme tabs: filter cards by the degree in their subtitle
+  const progFilters = {
+    'All Programmes': () => true,
+    'B.Tech / B.E.': t => /B\.Tech|B\.E\./.test(t),
+    'MBA / MCA': t => /MBA|MCA/.test(t),
+    'Polytechnic': t => /Polytechnic|Diploma/.test(t),
+    'Ph.D.': t => /Ph\.D/.test(t)
+  };
   document.querySelectorAll('.prog-tab').forEach(tab => {
     tab.addEventListener('click', function() {
       document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
       this.classList.add('active');
+      const match = progFilters[this.textContent.trim()] || (() => true);
+      let shown = 0;
+      document.querySelectorAll('.prog-card').forEach(card => {
+        const sub = card.querySelector('.prog-sub-title')?.textContent || '';
+        const visible = match(sub);
+        card.classList.toggle('hidden', !visible);
+        if (visible) shown++;
+      });
+      let empty = document.getElementById('progEmpty');
+      if (!empty) {
+        empty = document.createElement('p');
+        empty.id = 'progEmpty';
+        empty.style.cssText = 'text-align:center;color:#666;padding:20px;grid-column:1/-1;';
+        empty.textContent = 'Details for this programme will be announced soon. Please contact the admissions office.';
+        document.querySelector('.prog-grid').append(empty);
+      }
+      empty.hidden = shown > 0;
     });
   });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  mainNav.addEventListener('click', e => { if (e.target.tagName === 'A') { mainNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); } });
 </script>
 </body>
 </html>
